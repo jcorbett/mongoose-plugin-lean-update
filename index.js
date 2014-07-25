@@ -39,17 +39,20 @@ var setObjValue = function(data, field, value) {
   * @param {Function} done - callback object after save is complete
 **/
 var updateDocument = function(data, done) {
-  for(var field in this.constructor.schema.paths) {
+  var doc = this;
+  for(var field in doc.constructor.schema.paths) {
     if((field !== '_id') && (field !== '__v')) {
       var new_value = getObjValue(field, data);
       if(new_value !== undefined) {
-        setObjValue(this, field, new_value);
+        setObjValue(doc, field, new_value);
       }
     }
   };
 
-  if(done) return this.save(done);
-  else return this;
+  if(done) return doc.save(done);
+  else return doc;
 };
 
-module.exports = updateDocument;
+module.exports = function(schema) {
+  schema.methods.leanUpdate = updateDocument;
+};

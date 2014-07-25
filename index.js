@@ -48,7 +48,8 @@ var updateDocument = function(data, done) {
     }
   };
 
-  this.save(done);
+  if(done) return this.save(done);
+  else return this;
 };
 
 module.exports = updateDocument;

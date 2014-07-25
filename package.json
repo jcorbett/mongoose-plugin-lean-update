@@ -1,0 +1,27 @@
+{
+  "name": "mongoose-plugin-lean-update",
+  "version": "0.0.0",
+  "description": "Selectively update fields within a document",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcorbett/mongoose-plugin-lean-update.git"
+  },
+  "keywords": [
+    "mongoose",
+    "document",
+    "update",
+    "mongodb",
+    "mongo",
+    "orm"
+  ],
+  "author": "Justin Corbett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcorbett/mongoose-plugin-lean-update/issues"
+  },
+  "homepage": "https://github.com/jcorbett/mongoose-plugin-lean-update"
+}
